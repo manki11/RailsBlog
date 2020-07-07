@@ -1,2 +1,6 @@
 // @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.container > .card:first-of-type {
+  margin-top: $card-spacer-y;
+ }
