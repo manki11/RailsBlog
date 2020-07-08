@@ -1,6 +1,26 @@
 // @import "bootstrap-sprockets";
 @import "bootstrap";
 
-.container > .card:first-of-type {
-  margin-top: $card-spacer-y;
- }
+.container > .card{
+  margin-top: 2%;
+  margin-bottom: 3%;
+}
+
+.comment-container {
+  margin-bottom: 3rem;
+}
+
+.container {
+  padding-left: 5%;
+  padding-right: 5%;
+  margin-top: 5%;
+  padding-bottom: 10%;
+}
+
+.comments-container{
+  width: 30%;
+}
+
+.post-textedit{
+  height: 350px!important;
+}

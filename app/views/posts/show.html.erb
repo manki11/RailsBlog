@@ -1,9 +1,47 @@
 <div class="container">
   <h2><%= @post.title %></h2>
   <br>
-  <%= @post.body %>
+  <p>
+    <%= simple_format(@post.body) %>
+  </p>
 
-  <%= link_to "Edit", edit_post_path(@post), :class => 'btn btn-default' %>
-  <%= link_to "Delete", post_path(@post), method: :delete, data: { confirm: "Are you sure?" }, class:"button is-danger" %>
+
+  <br>
+  <%= link_to "Edit", edit_post_path(@post), class:"btn btn-sm btn-light" %>
+  <%= link_to "Delete", post_path(@post), method: :delete, data: { confirm: "Are you sure?" }, class:"btn btn-sm btn-light" %>
+
+  <hr>
+
+  <h5>Comments</h5>
+  <div class="comment-container">
+    <div class="row">
+      <% @post.comments.each do |comment|%>
+        <div class="col-md-6">
+          <div class="card card-body bg-light">
+            <p><strong><%= comment.username %>:</strong> <%= comment.body %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <h5>Add Comments</h5>
+  <div class="comments-container">
+    <%= form_for([@post, @post.comments.build]) do |f| %>
+      <p>
+        <%= f.label :username %><br>
+        <%= f.text_field(:username, {:class => 'form-control'})%>
+      </p>
+
+      <p>
+        <%= f.label :body %><br>
+        <%= f.text_area(:body, {:class => 'form-control'}) %>
+      </p>
+
+      <p>
+        <%= f.submit({:class => 'btn btn-outline-primary btn-sm'}) %>
+      </p>
+    <% end %>
+  </div>
 
 </div>
