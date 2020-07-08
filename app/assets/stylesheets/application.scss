@@ -1,5 +1,6 @@
 // @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome";
 
 .container > .card{
   margin-top: 2%;
@@ -8,6 +9,17 @@
 
 .comment-container {
   margin-bottom: 3rem;
+}
+
+.btn-delete{
+  position: absolute;
+  right: 1rem;
+  color: red;
+}
+
+.trash-button{
+  height: 20px;
+  width: 20px;
 }
 
 .container {

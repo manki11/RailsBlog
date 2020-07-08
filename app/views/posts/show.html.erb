@@ -12,36 +12,8 @@
 
   <hr>
 
-  <h5>Comments</h5>
-  <div class="comment-container">
-    <div class="row">
-      <% @post.comments.each do |comment|%>
-        <div class="col-md-6">
-          <div class="card card-body bg-light">
-            <p><strong><%= comment.username %>:</strong> <%= comment.body %></p>
-          </div>
-        </div>
-      <% end %>
-    </div>
-  </div>
+  <%= render 'comments/comments' %>
 
-  <h5>Add Comments</h5>
-  <div class="comments-container">
-    <%= form_for([@post, @post.comments.build]) do |f| %>
-      <p>
-        <%= f.label :username %><br>
-        <%= f.text_field(:username, {:class => 'form-control'})%>
-      </p>
-
-      <p>
-        <%= f.label :body %><br>
-        <%= f.text_area(:body, {:class => 'form-control'}) %>
-      </p>
-
-      <p>
-        <%= f.submit({:class => 'btn btn-outline-primary btn-sm'}) %>
-      </p>
-    <% end %>
-  </div>
+  <%= render 'comments/form' %>
 
 </div>

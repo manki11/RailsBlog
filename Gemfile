@@ -22,6 +22,8 @@ gem 'bootstrap', '~> 4.1.1'
 
 gem 'jquery-rails'
 
+gem 'font-awesome-rails'
+
 gem 'solargraph', group: :development
 gem 'rubocop', group: :development
 # Use Redis adapter to run Action Cable in production

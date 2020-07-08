@@ -1,0 +1,19 @@
+<h5>Comments</h5>
+<div class="comment-container">
+  <div class="row">
+    <% @post.comments.each do |comment|%>
+      <div class="col-md-6">
+        <div class="card card-body bg-light">
+          <p><strong><%= comment.username %>:</strong> <%= comment.body %>
+            <span><%= link_to '<i class="trash-button fa fa-trash-o"></i>'.html_safe , [comment.post, comment],
+                        method: :delete,
+                        data: {confirm: "Are you sure?"},
+                        class: "btn btn-sm btn-light btn-delete"
+            %>
+            </span>
+          </p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
